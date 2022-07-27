@@ -1,14 +1,22 @@
-import React from "react";
+import React from 'react'
 
-export default function Question({ children }) {
+type Props = {
+  children?: React.ReactNode;
+};
+
+export function Title({ children }: Props) {
+  return <h3>{children}</h3>;
+}
+
+export function Answer({ children }: Props) {
   return (
-    <details>
-      <summary>{children}</summary>
-      <p>
-        Epcot is a theme park at Walt Disney World Resort featuring exciting
-        attractions, international pavilions, award-winning fireworks and
-        seasonal special events.
-      </p>
+    <details >
+      <div >{children}</div>
+      <summary >Answer</summary>
     </details>
   );
+}
+
+export function Question({ children }: Props) {
+  return <article >{children}</article>;
 }
